@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f7fb">
+    <meta name="description" content="Faculty of Science, University of Boumerdes — announcements, departments and campus information.">
+    <title>Faculty of Science | University of Boumerdes</title>
+    <link rel="icon" href="/assets/faculty-logo.png" type="image/png">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main id="auth-screen" class="auth-layout">
+      <section class="auth-story" aria-label="Faculty of Science">
+        <div class="story-top">
+          <img class="brand-mark" src="/assets/faculty-logo.png" alt="Faculty of Science, University of Boumerdes logo">
+          <span class="eyebrow">UNIVERSITY OF BOUMERDES</span>
+        </div>
+        <div class="story-copy">
+          <p class="eyebrow light">LEARN · DISCOVER · ADVANCE</p>
+          <h1>Curiosity takes<br>you further.</h1>
+          <p>One place for the people, ideas and opportunities that make our Faculty of Science.</p>
+        </div>
+        <div class="story-foot">
+          <span class="story-dot"></span>
+          <span>Faculty of Science <span aria-hidden="true">·</span> Boumerdes, Algeria</span>
+        </div>
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+      </section>
+
+      <section class="auth-panel">
+        <div class="auth-card">
+          <div class="mobile-brand">
+            <img class="brand-mark" src="/assets/faculty-logo.png" alt="">
+            <span>FACULTY OF SCIENCE</span>
+          </div>
+          <p class="eyebrow auth-eyebrow" id="auth-kicker">YOUR FACULTY, CONNECTED</p>
+          <h2 id="auth-title">Welcome back</h2>
+          <p class="auth-subtitle" id="auth-description">Sign in to see the latest from your faculty.</p>
+
+          <div class="auth-tabs" role="tablist" aria-label="Account options">
+            <button type="button" class="auth-tab active" id="signin-tab" role="tab" aria-selected="true">Sign in</button>
+            <button type="button" class="auth-tab" id="signup-tab" role="tab" aria-selected="false">Create account</button>
+          </div>
+
+          <div id="auth-message" class="message" role="status" aria-live="polite" hidden></div>
+          <form id="auth-form">
+            <label id="name-field" class="field" hidden>
+              <span>Full name</span>
+              <input id="name-input" name="name" autocomplete="name" maxlength="80" placeholder="Your full name">
+            </label>
+            <label class="field">
+              <span>Email address</span>
+              <input id="email-input" name="email" type="email" autocomplete="email" maxlength="254" placeholder="you@univ-boumerdes.dz" required>
+            </label>
+            <label class="field">
+              <span>Password</span>
+              <input id="password-input" name="password" type="password" autocomplete="current-password" minlength="8" maxlength="128" placeholder="At least 8 characters" required>
+            </label>
+            <label id="role-field" class="field" hidden>
+              <span>I am a</span>
+              <select id="role-input" name="role">
+                <option value="student">Student</option>
+                <option value="teacher">Teacher</option>
+              </select>
+            </label>
+            <button id="auth-submit" class="button button-primary button-wide" type="submit">Sign in <span aria-hidden="true">→</span></button>
+          </form>
+          <p class="auth-note"><span class="lock-icon" aria-hidden="true">◆</span> Your account is protected with secure sign-in.</p>
+        </div>
+        <footer class="auth-footer">© <span id="current-year"></span> Faculty of Science, University of Boumerdes</footer>
+      </section>
+    </main>
+
+    <div id="portal" hidden>
+      <header class="topbar">
+        <a class="wordmark" href="#home" aria-label="Faculty of Science home">
+          <img src="/assets/faculty-logo.png" alt="">
+          <span><strong>FACULTY OF SCIENCE</strong><small>UNIVERSITY OF BOUMERDES</small></span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a class="nav-link active" href="#home">Overview</a>
+          <a class="nav-link" href="#announcements">Announcements</a>
+          <a class="nav-link" href="#departments">Departments</a>
+        </nav>
+        <div class="account-area">
+          <span class="user-greeting" id="user-greeting"></span>
+          <button type="button" id="admin-toggle" class="button button-admin" hidden>Manage site</button>
+          <button type="button" id="logout-button" class="button button-quiet">Sign out</button>
+        </div>
+      </header>
+      <div id="portal-message" class="message portal-message" role="status" aria-live="polite" hidden></div>
+
+      <main id="home" class="site-main">
+        <section class="welcome-hero">
+          <div class="hero-content">
+            <p class="eyebrow hero-eyebrow">FACULTY OF SCIENCE <span> / </span> BOUMERDES</p>
+            <h1>A place to <span>think bigger.</span></h1>
+            <p class="hero-description">Stay connected to faculty news, academic updates and the departments shaping tomorrow.</p>
+            <a class="button button-light" href="#announcements">Explore updates <span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="art-ring ring-a"></div>
+            <div class="art-ring ring-b"></div>
+            <div class="art-core"><span>Σ</span><span>π</span><span>∞</span></div>
+            <span class="art-label">SCIENCE<br>IN MOTION</span>
+          </div>
+          <div class="hero-bottom"><span>EST. 1998</span><span>UNIVERSITY OF BOUMERDES</span></div>
+        </section>
+
+        <section id="announcements" class="content-section">
+          <div class="section-heading">
+            <div><p class="eyebrow">WHAT'S HAPPENING</p><h2>Latest announcements</h2></div>
+            <span class="section-index">01 <span>/</span> 02</span>
+          </div>
+          <div id="announcements-list" class="announcement-list"></div>
+        </section>
+
+        <section id="departments" class="content-section departments-section">
+          <div class="section-heading">
+            <div><p class="eyebrow">EXPLORE OUR FACULTY</p><h2>Departments</h2></div>
+            <span class="section-index">02 <span>/</span> 02</span>
+          </div>
+          <div id="departments-list" class="department-grid"></div>
+        </section>
+      </main>
+      <footer class="site-footer">
+        <a class="wordmark footer-wordmark" href="#home"><img src="/assets/faculty-logo.png" alt=""><span><strong>FACULTY OF SCIENCE</strong><small>UNIVERSITY OF BOUMERDES</small></span></a>
+        <span>Curiosity takes you further.</span>
+        <span>© <span id="footer-year"></span> Faculty of Science</span>
+      </footer>
+
+      <section id="admin-panel" class="admin-panel" hidden aria-labelledby="admin-title">
+        <div class="admin-panel-inner">
+          <div class="admin-heading">
+            <div><p class="eyebrow">FACULTY ADMINISTRATION</p><h2 id="admin-title">Manage your site</h2></div>
+            <button type="button" class="icon-button" id="close-admin" aria-label="Close admin tools">×</button>
+          </div>
+          <div id="admin-message" class="message" role="status" aria-live="polite" hidden></div>
+          <div class="admin-columns">
+            <section class="admin-card">
+              <p class="eyebrow">PUBLISH AN UPDATE</p>
+              <h3 id="announcement-form-title">New announcement</h3>
+              <form id="announcement-form" class="manage-form">
+                <label class="field"><span>Title</span><input id="announcement-title" maxlength="120" required></label>
+                <label class="field"><span>Announcement</span><textarea id="announcement-body" rows="4" maxlength="5000" required></textarea></label>
+                <label class="field"><span>Publication date</span><input id="announcement-date" type="date" required></label>
+                <div class="form-actions"><button class="button button-primary" type="submit">Publish announcement</button><button type="button" id="cancel-announcement-edit" class="button button-quiet" hidden>Cancel edit</button></div>
+              </form>
+              <div id="admin-announcements" class="manage-list"></div>
+            </section>
+            <section class="admin-card">
+              <p class="eyebrow">KEEP THE FACULTY CURRENT</p>
+              <h3 id="department-form-title">Add a department</h3>
+              <form id="department-form" class="manage-form">
+                <label class="field"><span>Department name</span><input id="department-name" maxlength="80" required></label>
+                <label class="field"><span>Short description</span><textarea id="department-description" rows="3" maxlength="500" required></textarea></label>
+                <div class="form-actions"><button class="button button-primary" type="submit">Add department</button><button type="button" id="cancel-department-edit" class="button button-quiet" hidden>Cancel edit</button></div>
+              </form>
+              <div id="admin-departments" class="manage-list"></div>
+            </section>
+          </div>
+        </div>
+      </section>
+      <div id="panel-backdrop" class="panel-backdrop" hidden></div>
+    </div>
+    <script src="/app.js" defer></script>
+  </body>
+</html>
