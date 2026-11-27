@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#08233e">
+    <meta name="description" content="Faculté des Sciences — Université de Boumerdès">
+    <title>Faculté des Sciences | Université de Boumerdès</title>
+    <link rel="icon" href="/assets/faculty-logo.png" type="image/png">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Accueil Faculté des Sciences">
+        <img src="/assets/faculty-logo.png" alt="">
+        <span><strong>FACULTÉ DES SCIENCES</strong><small>UNIVERSITÉ DE BOUMERDÈS</small></span>
+      </a>
+      <nav class="main-nav" aria-label="Navigation principale">
+        <a class="active" href="/">Accueil</a>
+        <a href="/announcements">Annonces</a>
+        <a href="/departments">Départements</a>
+      </nav>
+      <div class="header-actions">
+        <div class="language-switch" aria-label="Language">
+          <button class="language-button active" type="button" data-language="fr">FR</button>
+          <button class="language-button" type="button" data-language="en">EN</button>
+        </div>
+        <button id="signin-toggle" class="manage-button" type="button">Connexion admin</button>
+      </div>
+    </header>
+
+    <main>
+      <div id="home-content">
+      <section id="accueil" class="hero">
+        <div class="hero-slides">
+          <article class="hero-slide active">
+            <div class="hero-copy">
+              <p data-hero-kicker>FACULTÉ DES SCIENCES · UNIVERSITÉ DE BOUMERDÈS</p>
+              <h1 id="hero-title">Bienvenue à la Faculté<br><em>des Sciences</em></h1>
+              <p class="hero-description" data-hero-description>Consultez les annonces et retrouvez les informations de nos départements.</p>
+              <div class="hero-actions">
+                <a href="/announcements" class="hero-button" data-hero-action>Voir les annonces <span>→</span></a>
+                <a href="/departments" class="hero-button hero-button-outline" data-hero-secondary>Nos départements</a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <aside class="hero-facts" aria-label="La faculté">
+          <div><span aria-hidden="true">⌂</span><strong>6</strong><small>Départements</small></div>
+          <div><span aria-hidden="true">⚗</span><strong>Actualités</strong><small>Annonces de la faculté</small></div>
+          <div><span aria-hidden="true">✦</span><strong>Étudiants</strong><small>Informations utiles</small></div>
+        </aside>
+      </section>
+
+      <div class="content-dashboard">
+        <section id="annonces" class="section announcement-section">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">ACTUALITÉS FACULTAIRES</p>
+              <h2>Annonces récentes</h2>
+            </div>
+            <a class="text-link" id="show-all-announcements" href="/announcements">Voir toutes <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="announcement-filters" role="tablist" aria-label="Catégorie d'annonces">
+            <button class="filter active" type="button" data-category="all">Toutes</button>
+            <button class="filter" type="button" data-category="general">Générales</button>
+            <button class="filter" type="button" data-category="department">Par département</button>
+          </div>
+          <div id="announcements-list" class="announcement-grid"></div>
+        </section>
+
+        <section id="departements" class="section department-section">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">EXPLORER L'UNIVERSITÉ</p>
+              <h2>Nos départements</h2>
+            </div>
+          </div>
+          <div id="departments-list" class="department-grid"></div>
+        </section>
+      </div>
+
+      <section class="stats-band" aria-label="La faculté en chiffres">
+        <div class="stat-item"><strong id="stat-departments">0</strong><span data-stat="departments">Départements</span></div>
+        <div class="stat-item"><strong id="stat-announcements">0</strong><span data-stat="announcements">Annonces publiées</span></div>
+        <div class="stat-item"><strong>2</strong><span data-stat="categories">Catégories d'information</span></div>
+        <p>UMBB <em data-stat="motto">— annonces et informations de la faculté.</em></p>
+      </section>
+      </div>
+      <section id="detail-view" class="detail-view" hidden></section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand" href="/">
+        <img src="/assets/faculty-logo.png" alt="">
+        <span><strong>FACULTÉ DES SCIENCES</strong><small>UNIVERSITÉ DE BOUMERDÈS</small></span>
+      </a>
+      <p>© <span id="footer-year"></span> Faculté des Sciences</p>
+    </footer>
+
+    <div id="panel-backdrop" class="panel-backdrop" hidden></div>
+    <div id="signin-modal" class="signin-modal" hidden role="dialog" aria-modal="true" aria-labelledby="signin-title">
+      <form id="signin-form" class="signin-card">
+        <button id="close-signin" class="signin-close" type="button" aria-label="Fermer">×</button>
+        <p class="eyebrow">ADMINISTRATION</p>
+        <h2 id="signin-title">Connexion administrateur</h2>
+        <p id="signin-description" class="signin-description">Identifiez-vous pour modifier les annonces et les départements.</p>
+        <div id="signin-message" class="message" hidden></div>
+        <label class="field"><span>Nom d'utilisateur</span><input id="signin-username" autocomplete="username" required></label>
+        <label class="field"><span>Mot de passe</span><input id="signin-password" type="password" autocomplete="current-password" required></label>
+        <button class="primary-button signin-submit" type="submit">Se connecter</button>
+      </form>
+    </div>
+    <aside id="manage-panel" class="manage-panel" aria-labelledby="manage-title" hidden>
+      <div class="manage-header">
+        <div><p class="eyebrow">ADMINISTRATION</p><h2 id="manage-title">Gérer le site</h2></div>
+        <div class="manage-header-actions">
+          <button id="logout-admin" class="secondary-button" type="button">Se déconnecter</button>
+          <button id="close-manage" class="icon-button" type="button" aria-label="Fermer">×</button>
+        </div>
+      </div>
+      <div id="manage-message" class="message" hidden></div>
+      <div class="manage-columns">
+        <section class="manage-card">
+          <p class="eyebrow">NOUVELLE INFORMATION</p>
+          <h3 id="announcement-form-title">Annonce</h3>
+          <form id="announcement-form">
+            <label class="field"><span>Titre</span><input id="announcement-title" maxlength="120" required></label>
+            <label class="field"><span>Contenu</span><textarea id="announcement-body" rows="4" maxlength="5000" required></textarea></label>
+            <div class="field-row">
+              <label class="field"><span>Date</span><input id="announcement-date" type="date" required></label>
+              <label class="field"><span>Catégorie</span><select id="announcement-category"><option value="general">Générale</option><option value="department">Département</option></select></label>
+            </div>
+            <label id="department-select-field" class="field" hidden><span>Département</span><select id="announcement-department"></select></label>
+            <div class="form-actions"><button class="primary-button" type="submit">Publier</button><button id="cancel-announcement-edit" class="secondary-button" type="button" hidden>Annuler</button></div>
+          </form>
+          <div id="admin-announcements" class="manage-list"></div>
+        </section>
+        <section class="manage-card">
+          <p class="eyebrow">STRUCTURE FACULTÉ</p>
+          <h3 id="department-form-title">Département</h3>
+          <form id="department-form">
+            <label class="field"><span>Nom</span><input id="department-name" maxlength="80" required></label>
+            <label class="field"><span>Description</span><textarea id="department-description" rows="3" maxlength="500" required></textarea></label>
+            <div class="form-actions"><button class="primary-button" type="submit">Ajouter</button><button id="cancel-department-edit" class="secondary-button" type="button" hidden>Annuler</button></div>
+          </form>
+          <div id="admin-departments" class="manage-list"></div>
+        </section>
+      </div>
+    </aside>
+
+    <script src="/app.js" defer></script>
+  </body>
+</html>
