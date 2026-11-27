@@ -11,7 +11,7 @@ from urllib.parse import unquote, urlparse
 
 ROOT = Path(__file__).resolve().parent
 STATIC_ROOT = ROOT / "static"
-HOST = os.environ.get("HOST", "127.0.0.1")
+HOST = "0.0.0.0"
 PORT = int(os.environ.get("PORT", "8000"))
 DATABASE_URL = os.environ.get(
     "DATABASE_URL",
